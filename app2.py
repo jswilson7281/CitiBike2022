@@ -68,7 +68,7 @@ elif page == 'Weather component and bike usage':
 
     st.plotly_chart(fig_2, use_container_width=True)
 
-    st.markdown("There is an obvious correlation between the rise and drop of temperatures and their relationship with the frequency of bike trips taken daily. As temperatures plunge, so does bike usage. This insight indicates that the shortage problem may be prevalent merely in the warmer months, approximately from May to October.")
+    st.markdown("The coorelation between warmer weather months and rentals of bikes is obvious. When the weather is at a higher average the number of bikes rented in the city is also at a higher rate. This could lead to a shortage of available bikes during these warmer months.")
 
 ### Most popular stations page
 
@@ -98,7 +98,7 @@ elif page == 'Most popular stations':
     width = 900, height = 600
 )
     st.plotly_chart(fig, use_container_width = True)
-    st.markdown("From the bar chart it is clear that there are some start stations that are more popular than others - in the top 3 we can see Streeter Drive/Grand Avenue, Canal Street/Adams Streat as well as Clinton Street/Madison Street. There is a big jump between the highest and lowest bars of the plot, indicating some clear preferences for the leading stations. This is a finding that we could cross reference with the interactive map that you can access through the side bar select box.")
+    st.markdown("From the bar chart it is clear that there are some start stations that are more popular than others - in the top 3 we can see 57th St./37th Ave., 54th St./37th Ave., and 62nd St./43rd Ave. There is not a big jump between the highest and lowest bars of the plot as all rentals fall between 1200 and 1400 which in the grand scheme of things is somewhat miniscule.")
 
 elif page == 'Interactive map with aggregated bike trips': 
 
@@ -113,13 +113,12 @@ elif page == 'Interactive map with aggregated bike trips':
         html_data = f.read()
 
     ## Show in webpage
-    st.header("Aggregated Bike Trips in Chicago")
+    st.header("Aggregated Bike Trips in NYC")
     st.components.v1.html(html_data,height=1000)
     st.markdown("#### Using the filter on the left hand side of the map we can check whether the most popular start stations also appear in the most popular trips.")
     st.markdown("The most popular start stations are:")
-    st.markdown("Streeter Drive/Grand Avenue, Canal Street/Adams Street as well as Clinton Street/Madison Street. While having the aggregated bike trips filter enabled, we can see that even though Clinton Street/Madison Street is a popular start stations, it doesn't account for the most commonly taken trips.")
-    st.markdown("The most common routes (>2,000) are between Theater on the Lake, Streeter Dr/Grand Avenue, Millenium Park, Columbus Dr/Randolph Street, Shedd Aquarium, Michigan Avenue/Oak Street, Canal Street/Adams Street, which are predominantly located along the water.")
-
+    st.markdown("57 St/37 Ave, 54 St./37 Ave., and 62 St./43 Ave. With the aggregated bike trips filter enabled, we can see that even though 57 St./37 Ave. is a popular start stations, it doesn't account for the most commonly taken trips.")
+    st.markdown("The most common routes are between W 26 St./8 Ave. to 10 Ave/W 28 St., Norfolk St./Broome St. to Henry St/Grand St. and, lastly W 20 St./10 Ave. to W 21 St./6 Ave.")
 else:
     
     st.header("Conclusions and recommendations")
