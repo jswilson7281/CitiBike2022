@@ -125,5 +125,5 @@ else:
     #bikes = Image.open("recs_page.png")  #source: Midjourney
     #st.image(bikes)
     st.markdown("### Our analysis has shown that CitiBike should focus on the following objectives moving forward:")
-    st.markdown("- Add more stations to the locations around the water line of the east part of the Island. Some possible locations would be East 57th Street in Sutton, East 10th in Alphabet City near the Dry Dock Playground, and on East 114th Street in Harlem by the Thomas Jeferson Park. All these locations are near the shorline which would be appealing for the breeze coming off the water in hot months and are also near or within popular areas of these communities.)
+    st.markdown("Add more stations to the locations around the water line of the east part of the Island. Some possible locations would be East 57th Street in Sutton, East 10th in Alphabet City near the Dry Dock Playground, and on East 114th Street in Harlem by the Thomas Jeferson Park. All these locations are near the shorline which would be appealing for the breeze coming off the water in hot months and are also near or within popular areas of these communities.)
     st.markdown("- Ensure that bikes are fully stocked in all these stations during the warmer months in order to meet the higher demand, but provide a lower supply in winter and late autumn to reduce logistics costs")
