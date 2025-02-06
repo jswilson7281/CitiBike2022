@@ -3,26 +3,25 @@ import pandas as pd
 import numpy as np
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-import matplotlib.pyplot as plt
-from streamlit_keplergl import keplergl_static 
-from keplergl import KeplerGl
+import matplotlib.pyplot as plt 
 from datetime import datetime as dt 
 
-st.set_page_config(page_title = 'Divvy Bikes Strategy Dashboard', layout='wide')
-st.title("Divvy Bikes Strategy Dashboard")
-st.markdown("The dashboard will help with the expansion problems Divvy currently faces")
+st.set_page_config(page_title = 'CitiBike Bikes Strategy Dashboard', layout='wide')
+st.title("CitiBike Bikes Strategy Dashboard")
+st.markdown("The dashboard will help with the expansion problems CitiBike currently faces")
 
 ####################### Import data #########################################
 
 df = pd.read_csv('final_df.csv', index_col = 0)
-top20 = df.nlargest(n=20,columns='bike_rides_daily')
+station_df= df.drop_duplicates(subset='start_station_name')
+top20 = station_df.nlargest(n=20,columns='bike_rides_daily')
 
 # ########################### DEFINE THE CHARTS ############################
 
 
 ## Bar chart 
 
-fig = go.Figure(go.Bar(x = top20['start_station_name'], y = top20['value'], marker = {'color' : top20['value'], 'colorscale' : 'Blues'}))
+fig = go.Figure(go.Bar(x = top20['start_station_name'], y = top20['bike_rides_daily'], marker = {'color' : top20['bike_rides_daily'], 'colorscale' : 'Blues'}))
 fig.update_layout(
     title = 'Top 20 Most Popular Bike Stations in NYC',
     xaxis_title = 'Start Stations', 
@@ -60,7 +59,7 @@ path_to_html = "keplergl.html"
 with open(path_to_html, 'r') as f:
     html_data = f.read()
 ## Show in web page 
-st.header("Aggregated Bike Trips in Chicago")
+st.header("Aggregated Bike Trips in NYC")
 st.components.v1.html(html_data,height = 1000)
 
 
